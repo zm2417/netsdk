@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: tof
+Build-Jdk: 1.8.0_291
+Main-Class: com.netsdk.demo.frame.Main
+

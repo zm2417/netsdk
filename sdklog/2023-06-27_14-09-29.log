@@ -1,0 +1,11 @@
+Begin Time:2023-06-27T14:09:29.420
+[2023-06-27T14:09:29.420 info Netsdk:58964 28468:25560 AVNetSDKMgr.cpp:504]Load avnetsdk library dynamically
+[2023-06-27T14:09:29.425 info Netsdk:58964 28468:25560 AVNetSDKMgr.cpp:549]avnetsdk module handle: 22BD0000
+
+[2023-06-27T14:09:29.425 info Netsdk:58964 28468:25560 AVNetSDKMgr.cpp:823]Load configsdk dynamically
+[2023-06-27T14:09:29.429 info Netsdk:58964 28468:25560 dhnetsdk.cpp:302]Enter CLIENT_SetAutoReconnect:[cbAutoConnect=200D0050, dwUser=00000000].
+[2023-06-27T14:09:29.429 info Netsdk:58964 28468:25560 dhnetsdk.cpp:304]Leave CLIENT_SetAutoReconnect.
+[2023-06-27T14:09:29.429 info Netsdk:58964 28468:25560 dhnetsdk.cpp:326]Enter CLIENT_SetConnectTime:[nWaitTime=5000, nTryTimes=1].
+[2023-06-27T14:09:29.429 info Netsdk:58964 28468:25560 dhnetsdk.cpp:339]Leave CLIENT_SetConnectTime.
+[2023-06-27T14:09:29.430 info Netsdk:58964 28468:25560 dhnetsdk.cpp:352]Enter CLIENT_SetNetworkParam:[nWaittime=0, nConnectTime=10000, nConnectTryNum=0, nSubConnectSpaceTime=0, nGetDevInfoTime=3000, nConnectBufSize=0, nGetConnInfoTime=3000, nSearchRecordTime=0, nsubDisconnetTime=0, byNetType=0, byPlaybackBufSize=0, bDetectDisconnTime=0, bKeepLifeInterval=0, nPicBufSize=0].
+[2023-06-27T14:09:29.430 info Netsdk:58964 28468:25560 dhnetsdk.cpp:367]Leave CLIENT_SetNetworkParam.

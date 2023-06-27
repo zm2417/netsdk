@@ -1,0 +1,9 @@
+可以从官网下载NetSDK开发包 智能事件订阅： 
+CLIENT_Init/CLIENT_Cleanup ---- 初始化/清理库 应用程序开启及关闭时调用一次即可。 
+CLIENT_LoginWithHighLevelSecurity/CLIENT_Logout ----- 登陆/登出设备，
+CLIENT_LoginWithHighLevelSecurity可以返回一个登陆会话句柄 
+CLIENT_RealLoadPictureEx/CLIENT_StopLoadPic  开始/停止订阅智能图片消息 
+CLIENT_RealLoadPictureEx参数里有个回调函数，有图片过来就会触发回调消息 在回调函数中检测对应的事件 船只拌线
+#define EVENT_IVS_CROSSLINEDETECTION 0x00000002 // 警戒线事件(对应 DEV_EVENT_CROSSLINE_INFO) DEV_EVENT_CROSSLINE_INFO.stuIntelliCommInfo.emClassType为 EM_CLASS_BOATDETECTION = 44, // 船只检测 "BoatDetection" 时为船只识别 船只入侵
+#define EVENT_IVS_CROSSREGIONDETECTION 0x00000003 // 警戒区事件(对应 DEV_EVENT_CROSSREGION_INFO) DEV_EVENT_CROSSREGION_INFO.stuIntelliCommInfo.emClassType EM_CLASS_BOATDETECTION = 44, // 船只检测 "BoatDetection" 时为船只识别 船只停留
+#define EVENT_IVS_PARKINGDETECTION 0x00000116 // 非法停车事件(对应 DEV_EVENT_PARKINGDETECTION_INFO) DEV_EVENT_PARKINGDETECTION_INFO.stuIntelliCommInfo.emClassType为 EM_CLASS_BOATDETECTION = 44, // 船只检测 "BoatDetection" 时为船只识别
