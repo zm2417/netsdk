@@ -22,7 +22,7 @@ public class BoatHaveReConnect implements NetSDKLib.fHaveReConnect {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                frame.setTitle(Res.string().getGate() + " : " + Res.string().getOnline());
+                frame.setTitle(BoatFrame.title + " : " + Res.string().getOnline());
             }
         });
     }

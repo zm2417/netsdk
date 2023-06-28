@@ -44,6 +44,8 @@ public class BoatFrame extends JFrame {
 
     private boolean isAttach = false;
 
+    public static final String title = "船只检测";
+
     /*
      * 登录控件
      */
@@ -66,7 +68,7 @@ public class BoatFrame extends JFrame {
 //    private JTextField maskStatusTextField;
 
     public BoatFrame() {
-        String title = "船只检测";
+
         setTitle(title);
 //        setTitle(Res.string().getGate());
         setLayout(new BorderLayout());

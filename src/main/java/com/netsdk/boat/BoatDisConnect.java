@@ -21,7 +21,7 @@ public class BoatDisConnect implements NetSDKLib.fDisConnect {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                frame.setTitle(Res.string().getGate() + " : " + Res.string().getDisConnectReconnecting());
+                frame.setTitle(BoatFrame.title + " : " + Res.string().getDisConnectReconnecting());
             }
         });
     }
