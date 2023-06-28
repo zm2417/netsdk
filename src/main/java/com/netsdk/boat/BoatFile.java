@@ -11,7 +11,7 @@ public class BoatFile {
 
     public static LocalDateTime lastBoatWarn = null;
 
-    public static void haveBoat() {
+    public static synchronized void haveBoat() {
         lastBoatWarn = LocalDateTime.now();
         // 船只出现
         File file = new File(HAVE_BOAT);
@@ -30,7 +30,7 @@ public class BoatFile {
         }
     }
 
-    public static void noBoat() {
+    public static synchronized void noBoat() {
         // 船只消失
         File file = new File(NO_BOAT);
         File haveBoat = new File(HAVE_BOAT);
