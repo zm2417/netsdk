@@ -1,9 +1,13 @@
 package com.netsdk.boat;
 
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.time.LocalDateTime;
 
 public class BoatFile {
+
+    private static final Logger log = Logger.getLogger(BoatFile.class);
 
     private static final String FILE_PATH = "D:\\";
     private static final String HAVE_BOAT = FILE_PATH + "有船只.txt";
@@ -23,10 +27,10 @@ public class BoatFile {
             if (noBoat.exists()) {
                 noBoat.delete();
             }
-            System.out.println("创建" + HAVE_BOAT + "成功");
+            log.info("创建" + HAVE_BOAT + "成功");
         } catch (Exception e) {
-            System.out.println("创建" + HAVE_BOAT + "失败");
-            e.printStackTrace();
+            log.error("创建" + HAVE_BOAT + "失败", e);
+//            e.printStackTrace();
         }
     }
 
@@ -41,10 +45,10 @@ public class BoatFile {
             if (haveBoat.exists()) {
                 haveBoat.delete();
             }
-            System.out.println("创建" + NO_BOAT + "成功");
+            log.info("创建" + NO_BOAT + "成功");
         } catch (Exception e) {
-            System.out.println("创建" + NO_BOAT + "失败");
-            e.printStackTrace();
+            log.error("创建" + NO_BOAT + "失败", e);
+//            e.printStackTrace();
         }
     }
 
