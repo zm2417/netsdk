@@ -19,7 +19,7 @@ public class LoginPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	//登陆参数
-	private String s_strIp		   = "172.32.100.88";/*"172.23.12.17";*/ //"192.168.7.61";
+	private String s_strIp		   = "192.168.1.108";/*"172.23.12.17";*/ //"192.168.7.61";
 	private Integer s_nPort        = new Integer("37777");
 	private String s_strUser       = "admin";
 	private String s_strPassword   = "admin123";

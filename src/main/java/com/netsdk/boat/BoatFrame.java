@@ -54,23 +54,10 @@ public class BoatFrame extends JFrame {
     private JComboBox chnComboBox;
     private JButton attachBtn;
     private JButton detachBtn;
-//    private JButton cardOperateBtn;
-//
-//    private PaintPanel personPaintPanel;
-//
-//    private JTextField timeTextField;
-//    private JTextField openStatusTextField;
-//    private JTextField openMethodTextField;
-//    private JTextField cardNameTextField;
-//    private JTextField cardNoTextField;
-//    private JTextField userIdTextField;
-//    private JTextField tempTextField;
-//    private JTextField maskStatusTextField;
 
     public BoatFrame() {
 
         setTitle(title);
-//        setTitle(Res.string().getGate());
         setLayout(new BorderLayout());
         pack();
         setSize(800, 400);
@@ -226,18 +213,15 @@ public class BoatFrame extends JFrame {
 
             attachBtn = new JButton(Res.string().getAttach());
             detachBtn = new JButton(Res.string().getDetach());
-//            cardOperateBtn = new JButton(Res.string().getCardOperate());
             JLabel nullJLabel = new JLabel("");
 
             nullJLabel.setPreferredSize(new Dimension(205, 40));
             attachBtn.setPreferredSize(new Dimension(100, 20));
             detachBtn.setPreferredSize(new Dimension(100, 20));
-//            cardOperateBtn.setPreferredSize(new Dimension(205, 20));
 
             operatePanel.add(attachBtn);
             operatePanel.add(detachBtn);
             operatePanel.add(nullJLabel);
-//            operatePanel.add(cardOperateBtn);
 
             setEnable(false);
             detachBtn.setEnabled(false);
@@ -248,96 +232,17 @@ public class BoatFrame extends JFrame {
             gateShowPanel.setBorder(BorderFactory.createTitledBorder(""));
             gateShowPanel.setLayout(new BorderLayout());
 
-//            personPaintPanel = new PaintPanel();
             JPanel cardInfoPanel = new JPanel();
 
-//            personPaintPanel.setPreferredSize(new Dimension(250, 70));
-
-//            gateShowPanel.add(personPaintPanel, BorderLayout.WEST);
             gateShowPanel.add(cardInfoPanel, BorderLayout.CENTER);
 
             //
             cardInfoPanel.setLayout(new FlowLayout());
 
-//            JLabel timeLable = new JLabel(Res.string().getTime() + ":", JLabel.CENTER);
-//            JLabel openStatusLable = new JLabel(Res.string().getOpenStatus() + ":", JLabel.CENTER);
-//            JLabel openMethodLable = new JLabel(Res.string().getOpenMethod() + ":", JLabel.CENTER);
-//            JLabel cardNameLable = new JLabel(Res.string().getCardName() + ":", JLabel.CENTER);
-//            JLabel cardNoLable = new JLabel(Res.string().getCardNo() + ":", JLabel.CENTER);
-//            JLabel userIdLable = new JLabel(Res.string().getUserId() + ":", JLabel.CENTER);
-//            JLabel tempLable = new JLabel(Res.string().getTemp() + ":", JLabel.CENTER);
-//            JLabel maskstutasLable = new JLabel(Res.string().getMaskstutas() + ":", JLabel.CENTER);
-//
-//
-//            timeLable.setPreferredSize(new Dimension(80, 20));
-//            openStatusLable.setPreferredSize(new Dimension(80, 20));
-//            openMethodLable.setPreferredSize(new Dimension(80, 20));
-//            cardNameLable.setPreferredSize(new Dimension(80, 20));
-//            cardNoLable.setPreferredSize(new Dimension(80, 20));
-//            userIdLable.setPreferredSize(new Dimension(80, 20));
-//            tempLable.setPreferredSize(new Dimension(80, 20));
-//            maskstutasLable.setPreferredSize(new Dimension(80, 20));
-
-
-//            timeTextField = new JTextField("");
-//            openStatusTextField = new JTextField("");
-//            openMethodTextField = new JTextField("");
-//            cardNameTextField = new JTextField("");
-//            cardNoTextField = new JTextField("");
-//            userIdTextField = new JTextField("");
-//            tempTextField = new JTextField("");
-//            maskStatusTextField = new JTextField("");
-
 
             Dimension dimension = new Dimension();
             dimension.width = 150;
             dimension.height = 20;
-//            timeTextField.setPreferredSize(dimension);
-//            openStatusTextField.setPreferredSize(dimension);
-//            openMethodTextField.setPreferredSize(dimension);
-//            cardNameTextField.setPreferredSize(dimension);
-//            cardNoTextField.setPreferredSize(dimension);
-//            userIdTextField.setPreferredSize(dimension);
-//            tempTextField.setPreferredSize(dimension);
-//            maskStatusTextField.setPreferredSize(dimension);
-
-
-//            timeTextField.setHorizontalAlignment(JTextField.CENTER);
-//            openStatusTextField.setHorizontalAlignment(JTextField.CENTER);
-//            openMethodTextField.setHorizontalAlignment(JTextField.CENTER);
-//            cardNameTextField.setHorizontalAlignment(JTextField.CENTER);
-//            cardNoTextField.setHorizontalAlignment(JTextField.CENTER);
-//            userIdTextField.setHorizontalAlignment(JTextField.CENTER);
-//            tempTextField.setHorizontalAlignment(JTextField.CENTER);
-//            maskStatusTextField.setHorizontalAlignment(JTextField.CENTER);
-
-
-//            timeTextField.setEditable(false);
-//            openStatusTextField.setEditable(false);
-//            openMethodTextField.setEditable(false);
-//            cardNameTextField.setEditable(false);
-//            cardNoTextField.setEditable(false);
-//            userIdTextField.setEditable(false);
-//            tempTextField.setEditable(false);
-//            maskStatusTextField.setEditable(false);
-
-
-//            cardInfoPanel.add(timeLable);
-//            cardInfoPanel.add(timeTextField);
-//            cardInfoPanel.add(openStatusLable);
-//            cardInfoPanel.add(openStatusTextField);
-//            cardInfoPanel.add(openMethodLable);
-//            cardInfoPanel.add(openMethodTextField);
-//            cardInfoPanel.add(cardNameLable);
-//            cardInfoPanel.add(cardNameTextField);
-//            cardInfoPanel.add(cardNoLable);
-//            cardInfoPanel.add(cardNoTextField);
-//            cardInfoPanel.add(userIdLable);
-//            cardInfoPanel.add(userIdTextField);
-//            cardInfoPanel.add(tempLable);
-//            cardInfoPanel.add(tempTextField);
-//            cardInfoPanel.add(maskstutasLable);
-//            cardInfoPanel.add(maskStatusTextField);
 
             setOnClickListener();
         }
@@ -375,35 +280,14 @@ public class BoatFrame extends JFrame {
             }
         });
 
-
-        // 卡操作
-//        cardOperateBtn.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent arg0) {
-//                CardManegerDialog dialog = new CardManegerDialog();
-//                dialog.setVisible(true);
-//            }
-//        });
     }
 
     private void setEnable(boolean bln) {
         chnComboBox.setEnabled(bln);
         attachBtn.setEnabled(bln);
-//        cardOperateBtn.setEnabled(bln);
     }
 
     private void clearPanel() {
-//        personPaintPanel.setOpaque(true);
-//        personPaintPanel.repaint();
-//
-//        timeTextField.setText("");
-//        openStatusTextField.setText("");
-//        openMethodTextField.setText("");
-//        cardNameTextField.setText("");
-//        cardNoTextField.setText("");
-//        userIdTextField.setText("");
-//        tempTextField.setText("");
-//        maskStatusTextField.setText("");
     }
 
     class AccessEvent extends AWTEvent {
@@ -444,60 +328,6 @@ public class BoatFrame extends JFrame {
             if (!isAttach) {
                 return;
             }
-
-            // 图片显示
-//            if (gateBufferedImage != null) {
-//                personPaintPanel.setImage(gateBufferedImage);
-//                personPaintPanel.setOpaque(false);
-//                personPaintPanel.repaint();
-//            } else {
-//                personPaintPanel.setOpaque(true);
-//                personPaintPanel.repaint();
-//            }
-
-            // 时间
-//            if (msg.UTC == null || msg.UTC.toString().isEmpty()) {
-//                timeTextField.setText("");
-//            } else {
-//                msg.UTC.setTime(msg.UTC.dwYear, msg.UTC.dwMonth, msg.UTC.dwDay, msg.UTC.dwHour + 8, msg.UTC.dwMinute, msg.UTC.dwSecond);
-//                timeTextField.setText(msg.UTC.toString());
-//            }
-
-            // 开门状态
-//            if (msg.bStatus == 1) {
-//                openStatusTextField.setText(Res.string().getSucceed());
-//            } else {
-//                openStatusTextField.setText(Res.string().getFailed());
-//            }
-
-            // 开门方式
-//            openMethodTextField.setText(Res.string().getOpenMethods(msg.emOpenMethod));
-
-            // 卡名
-//            try {
-//                cardNameTextField.setText(new String(msg.szCardName, "GBK").trim());
-//            } catch (UnsupportedEncodingException e) {
-//                e.printStackTrace();
-//            }
-
-            // 卡号
-//            cardNoTextField.setText(new String(msg.szCardNo).trim());
-
-            // 用户ID
-//            userIdTextField.setText(new String(msg.szUserID).trim());
-
-            // 口罩状态
-//            maskStatusTextField.setText(Res.string().getMaskStatus(msg.emMask));
-
-            //温度
-//            if (msg.stuManTemperatureInfo.emTemperatureUnit == 0) {
-//                tempTextField.setText(String.valueOf(msg.stuManTemperatureInfo.fCurrentTemperature + "℃"));
-//            } else if (msg.stuManTemperatureInfo.emTemperatureUnit == 1) {
-//                tempTextField.setText(String.valueOf(msg.stuManTemperatureInfo.fCurrentTemperature + "℉"));
-//            } else if (msg.stuManTemperatureInfo.emTemperatureUnit == 2) {
-//                tempTextField.setText(String.valueOf(msg.stuManTemperatureInfo.fCurrentTemperature + "K"));
-//            }
-
 
         } else {
             super.processEvent(event);

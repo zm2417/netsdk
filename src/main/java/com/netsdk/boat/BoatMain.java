@@ -14,8 +14,8 @@ public class BoatMain {
                 demo.setVisible(true);
             }
         });
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new BoatTimeTask(), new Date(), 10 * 1000);
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new BoatTimeTask(), new Date(), 10 * 1000);
     }
 
 }
