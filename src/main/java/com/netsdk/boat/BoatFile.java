@@ -30,7 +30,6 @@ public class BoatFile {
             log.info("创建" + HAVE_BOAT + "成功");
         } catch (Exception e) {
             log.error("创建" + HAVE_BOAT + "失败", e);
-//            e.printStackTrace();
         }
     }
 
@@ -48,7 +47,6 @@ public class BoatFile {
             log.info("创建" + NO_BOAT + "成功");
         } catch (Exception e) {
             log.error("创建" + NO_BOAT + "失败", e);
-//            e.printStackTrace();
         }
     }
 
