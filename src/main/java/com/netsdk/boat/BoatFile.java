@@ -9,9 +9,9 @@ public class BoatFile {
 
     private static final Logger log = Logger.getLogger(BoatFile.class);
 
-    private static final String FILE_PATH = "D:\\";
-    private static final String HAVE_BOAT = FILE_PATH + "有船只.txt";
-    private static final String NO_BOAT = FILE_PATH + "没有船只.txt";
+    private static final String FILE_PATH = "C:\\船只\\";
+    private static final String HAVE_BOAT = FILE_PATH + "船只存在.txt";
+    private static final String NO_BOAT = FILE_PATH + "船只离开.TXT";
 
     public static LocalDateTime lastBoatWarn = null;
 

@@ -119,6 +119,11 @@ public class BoatFrame extends JFrame {
         });
     }
 
+    public void startBoatFrame() {
+        loginPanel.loginBtn.doClick();
+        attachBtn.doClick();
+    }
+
     // 登录
     public boolean login() {
         if (LoginModule.login(loginPanel.ipTextArea.getText(),

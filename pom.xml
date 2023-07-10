@@ -44,7 +44,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>com.netsdk.demo.frame.Main</mainClass>
+                            <mainClass>com.netsdk.boat.BoatMain</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
