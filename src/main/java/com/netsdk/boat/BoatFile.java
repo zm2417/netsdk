@@ -34,6 +34,7 @@ public class BoatFile {
     }
 
     public static synchronized void noBoat() {
+        lastBoatWarn = null;
         // 船只消失
         File file = new File(NO_BOAT);
         File haveBoat = new File(HAVE_BOAT);

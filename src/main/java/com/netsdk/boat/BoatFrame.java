@@ -6,6 +6,7 @@ import com.netsdk.demo.module.GateModule;
 import com.netsdk.demo.module.LoginModule;
 import com.netsdk.lib.NetSDKLib;
 import com.netsdk.lib.ToolKits;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +22,8 @@ import java.util.Vector;
  * 船只检测
  */
 public class BoatFrame extends JFrame {
+
+    private static final Logger log = Logger.getLogger(BoatFrame.class);
 
     private static final long serialVersionUID = 1L;
 
@@ -126,26 +129,58 @@ public class BoatFrame extends JFrame {
 
     // 登录
     public boolean login() {
-        if (LoginModule.login(loginPanel.ipTextArea.getText(),
-                Integer.parseInt(loginPanel.portTextArea.getText()),
-                loginPanel.nameTextArea.getText(),
-                new String(loginPanel.passwordTextArea.getPassword()))) {
+        int loginNumber = 0;
+        while (true) {
+            loginNumber++;
+            if (LoginModule.login(loginPanel.ipTextArea.getText(),
+                    Integer.parseInt(loginPanel.portTextArea.getText()),
+                    loginPanel.nameTextArea.getText(),
+                    new String(loginPanel.passwordTextArea.getPassword()))) {
 
-            for (int i = 1; i < LoginModule.m_stDeviceInfo.byChanNum + 1; i++) {
-                chnList.add(Res.string().getChannel() + " " + String.valueOf(i));
+                for (int i = 1; i < LoginModule.m_stDeviceInfo.byChanNum + 1; i++) {
+                    chnList.add(Res.string().getChannel() + " " + String.valueOf(i));
+                }
+
+                // 登陆成功，将通道添加到控件
+                chnComboBox.setModel(new DefaultComboBoxModel(chnList));
+
+                loginPanel.setButtonEnable(true);
+                setEnable(true);
+
+                return true;
+            } else {
+                log.info("连接失败");
+                setTitle(title + "连接失败,等待5秒再次尝试连接第" + loginNumber + "次");
+                try {
+                    Thread.sleep(5 * 1000);
+                } catch (Exception e) {
+                    log.error("thread sleep error", e);
+                }
+                log.info("尝试连接第" + loginNumber + "次");
+//                JOptionPane.showMessageDialog(null, Res.string().getLoginFailed() + ", " + ToolKits.getErrorCodeShow() + "尝试第" + loginNumber + "次连接", Res.string().getErrorMessage(), JOptionPane.ERROR_MESSAGE);
+//                return false;
             }
-
-            // 登陆成功，将通道添加到控件
-            chnComboBox.setModel(new DefaultComboBoxModel(chnList));
-
-            loginPanel.setButtonEnable(true);
-            setEnable(true);
-
-        } else {
-            JOptionPane.showMessageDialog(null, Res.string().getLoginFailed() + ", " + ToolKits.getErrorCodeShow(), Res.string().getErrorMessage(), JOptionPane.ERROR_MESSAGE);
-            return false;
         }
-        return true;
+//        if (LoginModule.login(loginPanel.ipTextArea.getText(),
+//                Integer.parseInt(loginPanel.portTextArea.getText()),
+//                loginPanel.nameTextArea.getText(),
+//                new String(loginPanel.passwordTextArea.getPassword()))) {
+//
+//            for (int i = 1; i < LoginModule.m_stDeviceInfo.byChanNum + 1; i++) {
+//                chnList.add(Res.string().getChannel() + " " + String.valueOf(i));
+//            }
+//
+//            // 登陆成功，将通道添加到控件
+//            chnComboBox.setModel(new DefaultComboBoxModel(chnList));
+//
+//            loginPanel.setButtonEnable(true);
+//            setEnable(true);
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, Res.string().getLoginFailed() + ", " + ToolKits.getErrorCodeShow(), Res.string().getErrorMessage(), JOptionPane.ERROR_MESSAGE);
+//            return false;
+//        }
+//        return true;
     }
 
     // 登出

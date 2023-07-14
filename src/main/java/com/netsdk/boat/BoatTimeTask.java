@@ -10,7 +10,7 @@ public class BoatTimeTask extends TimerTask {
 
     private static final Logger log = Logger.getLogger(BoatTimeTask.class);
 
-    private static final Integer millis = 1000 * 10;
+    private static final Integer millis = 1000 * 60 * 2;
 
     @Override
     public void run() {
