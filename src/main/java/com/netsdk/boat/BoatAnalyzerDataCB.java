@@ -49,7 +49,7 @@ public class BoatAnalyzerDataCB implements NetSDKLib.fAnalyzerDataCallBack {
             NetSDKLib.DEV_EVENT_PARKINGDETECTION_INFO msg = new NetSDKLib.DEV_EVENT_PARKINGDETECTION_INFO();
             ToolKits.GetPointerData(pAlarmInfo, msg);
             printObject(msg);
-
+            BoatFile.haveBoat();
         }
 
         return 0;
