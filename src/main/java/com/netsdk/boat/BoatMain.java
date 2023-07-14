@@ -12,7 +12,7 @@ public class BoatMain {
             public void run() {
                 BoatFrame demo = new BoatFrame();
                 demo.setVisible(true);
-//                demo.startBoatFrame();
+                demo.startBoatFrame();
             }
         });
 //        BoatFile.haveBoat();
