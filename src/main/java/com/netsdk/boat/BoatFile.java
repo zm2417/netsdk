@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class BoatFile {
 
@@ -21,6 +22,11 @@ public class BoatFile {
     private static final Integer millis = 1000 * (3 * 60 + 15);
 
     public static synchronized void haveBoat() {
+        // 晚上7点到11点是工作时间，才创建有船只文件
+        LocalDateTime now = LocalDateTime.now();
+        if (!checkWorkTime(now)) {
+            return;
+        }
         // 船只出现
         File file = new File(HAVE_BOAT);
         File noBoat = new File(NO_BOAT);
@@ -36,6 +42,15 @@ public class BoatFile {
         } catch (Exception e) {
             log.error("创建" + HAVE_BOAT + "失败", e);
         }
+    }
+
+    private static boolean checkWorkTime(LocalDateTime dateTime) {
+        int hour = dateTime.getHour();
+        if (hour < 19 || hour >= 23) {
+            // 非工作时间
+            return false;
+        }
+        return true;
     }
 
     public static synchronized void noBoat() {
@@ -70,6 +85,18 @@ public class BoatFile {
             // 超过指定时间没有出现有船只报警，即为无船只
             noBoat();
         }
+    }
+
+    public static void main(String[] args) {
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime date1 = LocalDateTime.parse("2023-07-08 18:57:56", fmt);
+        LocalDateTime date2 = LocalDateTime.parse("2023-07-08 19:57:56", fmt);
+        LocalDateTime date3 = LocalDateTime.parse("2023-07-08 22:57:56", fmt);
+        LocalDateTime date4 = LocalDateTime.parse("2023-07-08 23:57:56", fmt);
+        System.out.println(checkWorkTime(date1));
+        System.out.println(checkWorkTime(date2));
+        System.out.println(checkWorkTime(date3));
+        System.out.println(checkWorkTime(date4));
     }
 
 }
