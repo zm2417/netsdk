@@ -294,7 +294,10 @@ public class BoatFrame extends JFrame {
         attachBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                m_hAttachHandle = GateModule.realLoadPic(chnComboBox.getSelectedIndex(), analyzerCallback);
+//                m_hAttachHandle = GateModule.realLoadPic(chnComboBox.getSelectedIndex(), analyzerCallback);
+//                GateModule.realLoadPic(1, analyzerCallback);
+                // channelId = -1：订阅所有通道
+                m_hAttachHandle = GateModule.realLoadPic(-1, analyzerCallback);
                 if (m_hAttachHandle.longValue() != 0) {
                     isAttach = true;
                     attachBtn.setEnabled(false);

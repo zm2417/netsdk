@@ -10,20 +10,27 @@ public class BoatTimeTask extends TimerTask {
 
     private static final Logger log = Logger.getLogger(BoatTimeTask.class);
 
-    private static final Integer millis = 1000 * 60 * 2;
+    /**
+     * 3分15秒
+     */
+    private static final Integer millis = 1000 * (3 * 60 + 15);
 
     @Override
     public void run() {
-        log.info("timer task");
-        if (BoatFile.lastBoatWarn == null) {
-            return;
-        }
-        LocalDateTime now = LocalDateTime.now();
-        Duration duration = Duration.between(now, BoatFile.lastBoatWarn);
-        if (duration.toMillis() > millis) {
-            // 超过指定时间没有出现有船只报警，即为无船只
-            BoatFile.noBoat();
-        }
+        BoatFile.timer();
+//        log.info("timer task");
+//        if (BoatFile.lastBoatWarn == null) {
+//            System.out.println(1);
+//            BoatFile.noBoat();
+//            return;
+//        }
+//        LocalDateTime now = LocalDateTime.now();
+//        Duration duration = Duration.between(BoatFile.lastBoatWarn, now);
+//        if (Math.abs(duration.toMillis()) > millis) {
+//            System.out.println(2);
+//            // 超过指定时间没有出现有船只报警，即为无船只
+//            BoatFile.noBoat();
+//        }
     }
 
 }
